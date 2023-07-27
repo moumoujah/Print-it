@@ -29,3 +29,14 @@ let tagLine = document.querySelector('#banner p');
 let slideInit = 0;
 
 
+
+document.querySelector('.arrow_left').addEventListener('click', function() {
+	
+	alert('left');
+});
+
+
+document.querySelector('.arrow_right').addEventListener('click', function() {
+	
+	alert('right');
+});

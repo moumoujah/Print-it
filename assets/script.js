@@ -22,12 +22,13 @@ const slides = [
 
 const arrowLeft = document.getElementById(".arrow_left");
 const arrowRight = document.getElementById(".arrow_right");
-const dots = document.querySelector(".dots");
+let dotList = document.querySelectorAll('.dots .dot');
 let imageBanner = document.querySelector(".banner-img");
 const banner = document.getElementById("banner");
 let tagLine = document.querySelector('#banner p');
 let slideInit = 0;
-
+let dots = document.querySelector('#banner .dots'); 
+	
 
 
 document.querySelector('.arrow_left').addEventListener('click', function() {
@@ -40,3 +41,16 @@ document.querySelector('.arrow_right').addEventListener('click', function() {
 	
 	alert('right');
 });
+
+
+function dotCreation() {
+	let dot = document.createElement('div'); 
+	dot.classList.add("dot"); 
+	dots.appendChild(dot); 
+};
+
+for(let i = 0; i < slides.length; i++){ 
+    dotCreation();
+};
+
+dotList[slideInit].classList.add('dot_selected');

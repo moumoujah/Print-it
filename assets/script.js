@@ -48,7 +48,16 @@ document.querySelector('.arrow_left').addEventListener('click', function() {
 
 document.querySelector('.arrow_right').addEventListener('click', function() {
 	
-	alert('right');
+	if(slideInit == slides.length - 1) { 
+		dotTable[slideInit].classList.remove('dot_selected'); 
+		slideInit = 0; 
+		dotTable[slideInit].classList.add('dot_selected'); 
+	}
+	else { 
+		dotTable[slideInit].classList.remove('dot_selected'); 
+		slideInit++; 
+		dotTable[slideInit].classList.add('dot_selected');
+	};
 });
 
 

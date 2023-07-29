@@ -22,18 +22,27 @@ const slides = [
 
 const arrowLeft = document.getElementById(".arrow_left");
 const arrowRight = document.getElementById(".arrow_right");
-let dotList = document.querySelectorAll('.dots .dot');
 let imageBanner = document.querySelector(".banner-img");
 const banner = document.getElementById("banner");
 let tagLine = document.querySelector('#banner p');
 let slideInit = 0;
 let dots = document.querySelector('#banner .dots'); 
-	
+
 
 
 document.querySelector('.arrow_left').addEventListener('click', function() {
 	
-	alert('left');
+	if(slideInit == 0) { 
+		dotTable[slideInit].classList.remove('dot_selected'); 
+		slideInit = slides.length - 1; 
+		dotTable[slideInit].classList.add('dot_selected'); 
+	}
+	else { 
+		
+		dotTable[slideInit].classList.remove('dot_selected'); 
+		slideInit--; 
+		dotTable[slideInit].classList.add('dot_selected'); 
+	};
 });
 
 
@@ -52,5 +61,7 @@ function dotCreation() {
 for(let i = 0; i < slides.length; i++){ 
     dotCreation();
 };
+let dotTable = document.querySelectorAll('.dots .dot');	
+dotTable[slideInit].classList.add('dot_selected');
 
-dotList[slideInit].classList.add('dot_selected');
+
